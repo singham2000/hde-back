@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const app = express();
 const connectDB = require("./src/config/database.js");
 
-dotenv.config({ path: "./src/config/config.env" });
+dotenv.config({ path: "./src/config/.env" });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const allowedOrigins = ['https://hde-front.vercel.app/', 'http://localhost:3000'];
