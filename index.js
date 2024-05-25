@@ -7,20 +7,7 @@ const connectDB = require("./src/config/database.js");
 dotenv.config({ path: "./src/config/.env" });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const allowedOrigins = ['*'];
-
-const corsOptions = {
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: ["GET", "POST", "DELETE", "PUT"],
-};
-
-app.use(cors(corsOptions));
+app.use(cors({ origin: "*", methods: ["GET", "POST", "DELETE", "PUT"] }));
 connectDB();
 
 const donation = require('./src/routes/donations.js');
