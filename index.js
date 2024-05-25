@@ -28,9 +28,9 @@ app.use('/api/donations', donation);
 
 const images = require('./src/routes/images.js');
 app.use('/api/images', images);
-
+const port = process.env.PORT || 3000;
 try {
-    const server = app.listen(5000, () => {
+    const server = app.listen(port , () => {
         const port = server.address().port;
         console.log("App is listening on ", port);
     });
