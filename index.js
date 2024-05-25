@@ -30,7 +30,7 @@ const images = require('./src/routes/images.js');
 app.use('/api/images', images);
 const port = process.env.PORT || 3000;
 try {
-    const server = app.listen(port , () => {
+    const server = app.listen(3000 , () => {
         const port = server.address().port;
         console.log("App is listening on ", port);
     });
