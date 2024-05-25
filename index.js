@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const app = express();
 const connectDB = require("./src/config/database.js");
 
-dotenv.config({ path: "./src/config/.env" });
+dotenv.config({ path: "./src/config/config.env" });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const allowedOrigins = ['https://hde-front.vercel.app/', 'http://localhost:3000'];
@@ -30,7 +30,7 @@ const images = require('./src/routes/images.js');
 app.use('/api/images', images);
 
 try {
-    const server = app.listen(5000, () => {
+    const server = app.listen(7000, () => {
         const port = server.address().port;
         console.log("App is listening on ", port);
     });
