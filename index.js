@@ -7,7 +7,7 @@ const connectDB = require("./src/config/database.js");
 dotenv.config({ path: "./src/config/.env" });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const allowedOrigins = ['https://hde-front.vercel.app/', 'http://localhost:3000'];
+const allowedOrigins = ['https://hde-front.vercel.app'];
 
 const corsOptions = {
     origin: (origin, callback) => {
